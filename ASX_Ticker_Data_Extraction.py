@@ -11,7 +11,7 @@ st.title("📈 Stock Data Downloader — Closing Price (Full History)")
 user_ticker = st.text_input("Enter a single ticker (without exchange suffix):")
 
 if user_ticker:
-    ticker = user_ticker.strip().upper()
+    ticker = user_ticker.strip().upper() + ".AX"
     # If always ASX: uncomment next line
     # ticker = ticker + ".AX"
 
@@ -37,4 +37,5 @@ if user_ticker:
 
         except Exception as e:
             st.error(f"Failed to fetch data for {ticker}: {e}")
+
 

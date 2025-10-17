@@ -17,7 +17,7 @@ if user_ticker:
 
     with st.spinner(f"Fetching data for {ticker}, please wait..."):
         try:
-            data = yf.download(ticker, period="max", progress=False)
+            data = yf.download(ticker, period="1000d", progress=False)
             
             if data.empty or 'Close' not in data.columns:
                 st.error(f"No valid data returned for {ticker}. Please check the ticker symbol.")
@@ -37,3 +37,4 @@ if user_ticker:
 
         except Exception as e:
             st.error(f"Failed to fetch data for {ticker}: {e}")
+
